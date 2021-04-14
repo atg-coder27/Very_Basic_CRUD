@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <title>
+            Webpage
+        </title>
+    </head>
+    <body>
+        <a href= "{% url 'home' %}"> Back </a>
+        <h1> These are form details </h1>
+        {% for field in items %}
+            <p>
+                {{field.id}}
+                {{field.username}}
+                {{field.email}}
+                {{field.password}}
+                <a href="{% url 'edit' field.id %}"> Update </a>
+                <a href="{% url 'delete' field.id %}"> Delete </a>
+            </p>
+        {% endfor %}
+    </body>
+</html>

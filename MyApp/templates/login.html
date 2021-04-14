@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <title>
+            Webpage
+        </title>
+    </head>
+    <body>
+        <a href= "{% url 'home' %}"> Back </a>
+        <form method="POST"> {% csrf_token %}
+            {{form.as_p}}
+            <input type = "submit", value="Submit">
+        </form>
+        <h1> This is my form </h1>
+    </body>
+</html>
